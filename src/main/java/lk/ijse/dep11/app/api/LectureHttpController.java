@@ -1,13 +1,15 @@
 package lk.ijse.dep11.app.api;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/api/v1/lectures")
 @RestController
 @CrossOrigin
 public class LectureHttpController {
+    @ResponseStatus(HttpStatus.CREATED)
 
-    @PostMapping
+    @PostMapping(consumes = "multipart/form-data",produces = "application/json")
     public void createNewLecturer(){
         System.out.println("create Lectures");
 
