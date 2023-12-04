@@ -1,5 +1,6 @@
 package lk.ijse.dep11.app.api;
 
+import lk.ijse.dep11.app.to.request.LecturerReqTO;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,7 +11,8 @@ public class LectureHttpController {
     @ResponseStatus(HttpStatus.CREATED)
 
     @PostMapping(consumes = "multipart/form-data",produces = "application/json")
-    public void createNewLecturer(){
+    public void createNewLecturer(@ModelAttribute LecturerReqTO lecturer){
+        System.out.println(lecturer);
         System.out.println("create Lectures");
 
     }
